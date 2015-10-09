@@ -1,6 +1,6 @@
 {
   "name": "diego",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "searches for files",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
   "license": "BSD 3-Clause",
   "preferGlobal": true,
   "bin": {
-    "diego": "./bin/index.js"
+    "diego": "./src/index.js"
   },
   "repository": "git://github.com/hoganmaps/diegojs",
   "keywords": ["bulk download", "bulk convert"],
