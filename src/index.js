@@ -4,7 +4,7 @@
 var program = require('commander'),
     downloadStuff = require('./download.js'),
     extractStuff = require('./extract.js'),
-    fs = require('fs')
+    fs = require('fs');
 
 //download zip files from website
 program
@@ -29,7 +29,7 @@ program
     if(options.flatten){
         console.log('flatten flag set to ', options.flatten)
     }
-    console.log(inDIR);
+    extractStuff.extractAll(inDIR);
     //check to make sure the outURL is writable by the user
     // fs.access(outURL, fs.W_OK, function (err) {
     //   if(err) console.log(err)

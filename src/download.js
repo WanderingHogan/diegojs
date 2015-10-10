@@ -1,7 +1,12 @@
-request = require('request'),
-cheerio = require('cheerio'),
-fs = require('fs'),
-async = require('async')
+var request = require('request'),
+    cheerio = require('cheerio'),
+    fs = require('fs'),
+    async = require('async');
+
+
+//bulk downloads everything with a .zip extension
+//TODO - allow optional input paramater that accepts a string or an array
+//that can collect other filetypes. ex: ['.xls', '.xlsx', '.pdf', '.zip'] - etc
 
 module.exports = {
   downloadAll: function (inurl, outdir){
@@ -25,8 +30,8 @@ module.exports = {
           });
       }, function(err){
         console.log(err)
-      })
+      });
     })
 
   }
-}
+};
