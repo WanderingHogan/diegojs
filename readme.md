@@ -1,8 +1,6 @@
 # diego
 
-**Diego** is a command line tool written with nodejs that is meant to make bulk downloading, converting, uploading, and extracting data a little bit easier. A lot of data out there, especially geo data, is annoying to collect and work with. Hopefully diego can save you some time and not get in your way too much.
-
-We are going to keep diego as light weight and simple as possible.
+**Diego** is a command line tool written with nodejs that is meant to make bulk downloading and extracting data a little bit easier. There is A lot of data out there that is annoying to collect and work with. Hopefully diego can save you some time and not get in your way too much when you have to download a bunch of data.
 
 
 # installation
@@ -12,16 +10,13 @@ To install diego js, in your terminal type:
     $ npm install -g diego
 
 # dependencies
-[commander](https://www.npmjs.com/package/commander), [request](https://www.npmjs.com/package/request), [cheerio](https://www.npmjs.com/package/cheerio), [async](https://www.npmjs.com/package/async), [adm-zip](https://www.npmjs.com/package/adm-zip), [excel](https://www.npmjs.com/package/excel), [ftp-get](https://www.npmjs.com/package/ftp-get),
+[commander](https://www.npmjs.com/package/commander), [request](https://www.npmjs.com/package/request), [cheerio](https://www.npmjs.com/package/cheerio), [async](https://www.npmjs.com/package/async), [adm-zip](https://www.npmjs.com/package/adm-zip), [ftp-get](https://www.npmjs.com/package/ftp-get),
 
 
 
 This has only been tested, so far, with node 4.1.x and node 0.12.x on osx 10.11.
 
 # tools
-
-### converting data
-<i>coming soon</i>
 
 ---
 
@@ -40,6 +35,13 @@ The **download** command opens your input URL, finds the file types you are look
 
 ```javascript
   diego download -f csv,pdf,zip,txt <inurl> <outfolder>
+```
+
+<b>-n --nameLike</b>: If you only want to download files with a specific string in the name, add it with this optional param.
+Example - You want to download only files with the word 'environment' in the name:
+
+```javascript
+  diego download -n environment <inurl> <outfolder>
 ```
 
 ###### required

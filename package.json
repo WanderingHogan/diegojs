@@ -1,26 +1,30 @@
 {
   "name": "diego",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "searches for files",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "bulk data downloading and conversion tools",
+  "contributors": [
+    {
+      "name": "Zac Andereck",
+      "email": "anderezd@gmail.com"
+    }
+  ],
+  "author": "Chris Hogan <chris@hogan.io>",
   "license": "MIT",
   "preferGlobal": true,
   "bin": {
     "diego": "./src/index.js"
   },
   "repository": "git://github.com/hoganmaps/diegojs",
-  "keywords": ["bulk download", "bulk convert"],
-  "author": "Chris Hogan <chris@hogan.io>",
+  "keywords": [
+    "bulk download",
+    "bulk extract"
+  ],
   "dependencies": {
-    "commander": "^2.8.1",
-    "request": "^2.64.0",
-    "cheerio": "^0.19.0",
+    "adm-zip": "^0.4.7",
     "async": "^1.4.2",
-    "adm-zip":"^0.4.7",
-    "excel": "^0.1.4",
-    "ftp-get": "latest"
+    "cheerio": "^0.19.0",
+    "commander": "^2.8.1",
+    "ftp-get": "latest",
+    "request": "^2.64.0"
   }
 }

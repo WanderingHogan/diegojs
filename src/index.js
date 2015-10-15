@@ -7,10 +7,11 @@ var program = require('commander'),
   extractStuff = require('./extract.js'),
   fs = require('fs');
 
-//download zip files from website
+//download files from website
 program
   .command('download [inURL] [outDIR]')
   .option('-f --fileTypes [filetypes]', 'filetypes')
+  .option('-n --nameLike <nameLike>', 'Only download files with names like the input')
   .description('this looks at an input url and downloads all the zip files on ' +
     'that page to the destination folder of your choice. optionally, include the ' +
     'file types you are interested in downloaded as either a string or array of strings')
@@ -36,15 +37,4 @@ program
     extractStuff.extractAll(inDIR);
   });
 
-// program
-//   .command('convert [inDIR] <outTYPE>')
-//   .description('this looks at an input url and downloads all the zip files on ' +
-//     'that page to the destination folder of your choice')
-//   .option("-f, --flatten", "extracted files will be taken out of folders and")
-//   .action(function(inDIR, options) {
-//     if (options.flatten) {
-//       console.log('flatten flag set to ', options.flatten)
-//     }
-//     extractStuff.extractAll(inDIR);
-//   });
 program.parse(process.argv);

@@ -8,9 +8,12 @@ var request = require('request'),
 
 //bulk downloads everything with a .zip extension by default, using -f flag
 //we can download more file types
+//add a -w --where flag that allows users to put in a fuzzy match for filenames.
+//example -w north would download all files that had north in them
 
 module.exports = {
   downloadAll: function(inurl, outdir, options) {
+    console.log(options.nameLike)
 
     //this array holds the paths that are pulled out of the webpage you send us to
     var localArray = [];
@@ -36,8 +39,14 @@ module.exports = {
           for (var i = 0, len = optionsArray.length; i < len; i++) {
             //for each item in the options array, if the a tag has that file type,
             //put it in the localArray
+            // if the downloadable file either has the nameLike flag characters OR
+            // there is no nameLike set
+            //
             if (String($(this).attr('href')).indexOf('.' + optionsArray[i]) > -1) {
-              localArray.push($(this).attr('href'))
+              if(($(this).attr('href').indexOf(options.nameLike) > -1) || (!options.nameLike)){
+                localArray.push($(this).attr('href'))
+              }
+
             }
             //after it goes through all the optionsArray, go to the next a tag
             //and start over
